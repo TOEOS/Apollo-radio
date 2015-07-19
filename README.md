@@ -38,5 +38,6 @@ init_channel('apollo');
 
 - send message
 ``` javascript
-ws.send('whatever message');
+var data_hash = {channel: 'apollo', msg: 'call armstrong'};
+ws.send(JSON.stringify(data_hash));
 ```

@@ -1,6 +1,5 @@
 task default: %w(apollo:start)
 
-
 namespace :apollo do
   desc "Start both Websocket Server and Sinatra"
   multitask start: ["launch", "test_page"]

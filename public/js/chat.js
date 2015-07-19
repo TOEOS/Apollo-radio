@@ -1,7 +1,7 @@
 var init_channel = function(channel){
 
   // open web socket
-  ws = new WebSocket("ws://127.0.0.1:20232/" + channel);
+  ws = new WebSocket("ws://127.0.0.1:20232?channel=" + channel);
 
   ws.onerror = function(error){};
 
