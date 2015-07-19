@@ -20,8 +20,12 @@ EM.run do
     end
 
     ws.onmessage do |message|
-      data = JSON.parse(message)
-      EM::Hiredis.connect.pubsub.publish(data['channel'], data['msg'])
+      begin
+        data = JSON.parse(message)
+        EM::Hiredis.connect.pubsub.publish(data['channel'], data['msg'])
+      rescue => e
+        @logger.log(:error, e)
+      end
     end
 
     ws.onclose do
