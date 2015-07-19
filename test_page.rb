@@ -2,6 +2,6 @@ require 'sinatra'
 
 set :server, :thin
 
-get '/' do
+get '/test_page' do
   erb :test_page
 end
