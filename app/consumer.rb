@@ -1,6 +1,6 @@
 class Consumer
   attr_reader :connection, :pubsub, :ws_handshake
-  
+
   def initialize(ws_handshake)
     @ws_handshake = ws_handshake
   end

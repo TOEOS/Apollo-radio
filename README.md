@@ -41,3 +41,21 @@ init_channel('apollo');
 var data_hash = {channel: 'apollo', msg: 'call armstrong'};
 ws.send(JSON.stringify(data_hash));
 ```
+
+## Push message end-point
+- Specify channel with parameter.
+- Put data(JSON format) in body will send to client.
+
+here is example:
+- POST request
+```url
+http://localhost:4567/armstrong_push?channel=apollo
+```
+- data in the body
+```json
+{
+    "data": {
+        "msg": "rock and roll"
+    }
+}
+```
