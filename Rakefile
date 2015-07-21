@@ -9,7 +9,7 @@ namespace :apollo do
     ruby "app/ws_server.rb"
   end
 
-  desc "Start Sinatra for test page in development mode"
+  desc "Start Sinatra for API service"
   task :api_server do
     ruby "api_server.rb"
   end

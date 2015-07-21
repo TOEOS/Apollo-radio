@@ -1,5 +1,6 @@
 require 'sinatra'
 require 'redis'
+
 set :server, :thin
 
 get '/test_page' do
