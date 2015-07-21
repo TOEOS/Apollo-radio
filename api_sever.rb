@@ -9,7 +9,8 @@ end
 post '/armstrong_push' do
   if !params[:channel].nil?
     $__redis__ ||= Redis.new
-    puts request.body.class
     $__redis__.publish(params[:channel], request.body.read)
+  else
+    status 400
   end
 end

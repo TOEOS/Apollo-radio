@@ -12,19 +12,19 @@ The websocket server for Armstrong
 bundle install
 ```
 
-- Start both websocket server and test page
+- Start both websocket server and API server
 ``` shell
 rake apollo:start
 ```
 
 - or just start websocket server
 ``` shell
-rake apollo:launch
+rake apollo:ws_server
 ```
 
-- just start test page
+- just start api server
 ``` shell
-rake apollo:test_page
+rake apollo:api_server
 ```
 
 ## Test in Front-End
