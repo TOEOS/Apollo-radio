@@ -15,18 +15,18 @@ EM.run do
       ws.send "Hello Client, you connected to #{@consumer.channel}"
       @consumer.subscribe
       @consumer.on :message do |channel, message|
-        ws.send "channel: #{channel}, message: #{message}"
+        ws.send message
       end
     end
 
-    ws.onmessage do |message|
-      begin
-        data = JSON.parse(message)
-        EM::Hiredis.connect.pubsub.publish(data['channel'], data['msg'])
-      rescue => e
-        @logger.log(:error, e)
-      end
-    end
+    # ws.onmessage do |message|
+    #   begin
+    #     data = JSON.parse(message)
+    #     EM::Hiredis.connect.pubsub.publish(data['channel'], data['msg'])
+    #   rescue => e
+    #     @logger.log(:error, e)
+    #   end
+    # end
 
     ws.onclose do
       @logger.log(
