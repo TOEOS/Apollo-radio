@@ -3,6 +3,7 @@ require 'redis'
 require 'json'
 
 set :server, :thin
+set :environment, :production
 
 get '/test_page' do
   erb :test_page
