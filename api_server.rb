@@ -4,6 +4,7 @@ require 'json'
 
 set :server, :thin
 set :environment, :production
+set :port, 4567
 
 get '/test_page' do
   erb :test_page
